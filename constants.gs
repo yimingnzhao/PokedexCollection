@@ -12,6 +12,8 @@ const POKEDEX_REGION_NUMBERS = {
   'Galar' : [810, 893]
 };
 
+const POKEMON_JSON_URL = 'https://raw.githubusercontent.com/msikma/pokesprite/master/data/pokemon.json'
+
 const EXCEPTION_SHEET_NOT_FOUND = 'Exception: Sheet Name Not Found';
 const EXCEPTION_INVALID_NUMBER = 'Exception: Invalid Number Input';
 
@@ -32,6 +34,10 @@ const HEADER_TEXT_V_ALIGNMENT = 'middle';
 const BODY_FIRST_ROW = 2;
 const BODY_HEIGHT = 40;
 const BODY_NUM_COLS = 5;
+const BODY_POKEDEX_NUM_RANGE = 'A2:A';
+const BODY_POKEMON_NAME_RANGE = 'C2:C';
+const BODY_CAUGHT_RANGE = 'E2:E';
 const BODY_TEXT_H_ALIGNMENT = 'center';
+const BODY_TEXT_V_ALIGNMENT = 'middle';
 const BODY_BACKGROUND_WHITE = '#FFFFFF';
 const BODY_BACKGROUND_GRAY = '#F2F2F2';
