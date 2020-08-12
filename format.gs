@@ -69,6 +69,8 @@ function setBodyFormat(sheet) {
   sheet.setRowHeights(BODY_FIRST_ROW, lastRow - 1, BODY_HEIGHT);
   sheet.getRange(BODY_POKEDEX_NUM_RANGE).setVerticalAlignment(BODY_TEXT_V_ALIGNMENT);
   sheet.getRange(BODY_POKEMON_NAME_RANGE).setVerticalAlignment(BODY_TEXT_V_ALIGNMENT);
+  sheet.getRange(BODY_POKEBALL_RANGE).setVerticalAlignment(BODY_TEXT_V_ALIGNMENT);
+  sheet.getRange(BODY_POKEBALL_RANGE).setHorizontalAlignment(BODY_TEXT_H_ALIGNMENT);
   sheet.getRange(BODY_CAUGHT_RANGE).setVerticalAlignment(BODY_TEXT_V_ALIGNMENT);
   sheet.getRange(BODY_CAUGHT_RANGE).insertCheckboxes();
 }
