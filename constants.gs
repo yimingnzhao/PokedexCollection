@@ -1,15 +1,16 @@
 const DATA_SHEET = 'Data';
-const KANTO_POKEDEX_SHEET = 'Kanto';
+const NATIONAL_POKEDEX_SHEET = 'National Dex';
 
 const POKEDEX_REGION_NUMBERS = {
-  'Kanto' : [1, 151],
-  'Jhoto' : [152, 251],
-  'Hoenn' : [252, 386],
-  'Sinnoh': [387, 493],
-  'Unova' : [494, 649],
-  'Kalos' : [650, 721],
-  'Alola' : [722, 809],
-  'Galar' : [810, 893]
+  'National' : [1, 893],
+  'Kanto'    : [1, 151],
+  'Jhoto'    : [152, 251],
+  'Hoenn'    : [252, 386],
+  'Sinnoh'   : [387, 493],
+  'Unova'    : [494, 649],
+  'Kalos'    : [650, 721],
+  'Alola'    : [722, 809],
+  'Galar'    : [810, 893]
 };
 
 const POKEMON_JSON_URL = 'https://raw.githubusercontent.com/msikma/pokesprite/master/data/pokemon.json'
@@ -55,6 +56,7 @@ const HEALBALL = () => {return 'https://serebii.net/itemdex/sprites/healball.png
 const HEAVYBALL = () => {return 'https://serebii.net/itemdex/sprites/heavyball.png'};
 const LEVELBALL = () => {return 'https://serebii.net/itemdex/sprites/levelball.png'};
 const LOVEBALL = () => {return 'https://serebii.net/itemdex/sprites/loveball.png'};
+const LUREBALL = () => {return 'https://serebii.net/itemdex/sprites/lureball.png'};
 const LUXURYBALL = () => {return 'https://serebii.net/itemdex/sprites/luxuryball.png'};
 const MASTERBALL = () => {return 'https://serebii.net/itemdex/sprites/masterball.png'};
 const MOONBALL = () => {return 'https://serebii.net/itemdex/sprites/moonball.png'};
