@@ -1,5 +1,6 @@
 const DATA_SHEET = 'Data';
 const NATIONAL_POKEDEX_SHEET = 'National Dex';
+const EVENT_SHEET = 'Events';
 const KANTO_REGION_DEX = 'Kanto';
 const JHOTO_REGION_DEX = 'Jhoto';
 const HOENN_REGION_DEX = 'Hoenn';
@@ -33,9 +34,9 @@ const HEADER_NUM_ROWS = 1;
 const HEADER_HEIGHT = 60;
 const HEADER_POKEDEX_WIDTHS = [50, 60, 140, 40, 60];
 const HEADER_POKEDEX_DESCRIPTIONS = ['Dex No.', 'Sprite', 'Pokemon', 'Ball', 'Caught'];
-const HEADER_EVENT_WIDTHS = [40, 30, 20, 20, 30, 60, 140, 140, 30, 100, 80, 100, 100, 70, 30, 100, 100, 100, 100, 80, 80, 80, 80, 300];
+const HEADER_EVENT_WIDTHS = [40, 30, 20, 20, 30, 60, 140, 140, 30, 120, 100, 120, 120, 30, 100, 120, 120, 120, 120, 70, 70, 70, 70, 300];
 const HEADER_EVENT_DESCRIPTIONS = ['Ball', 'FT', '★', '', 'No.', 'Sprite', 'Pokemon', 'Name', 
-                                   'Lv.', 'OT', 'ID', 'Ability', 'Nature', 'Language','M/F', 
+                                   'Lv.', 'OT', 'ID', 'Ability', 'Nature','M/F', 'Language', 
                                    'Move 1', 'Move 2', 'Move 3', 'Move 4', 'Ribbon 1',
                                    'Ribbon 2', 'Ribbon 3', 'Ribbon 4', 'Notes']; 
 const HEADER_BACKGROUND = '#000000';
@@ -43,6 +44,7 @@ const HEADER_TEXT_FONT_FAMILY = 'Arial';
 const HEADER_TEXT_FONT_SIZE  = 11;
 const HEADER_TEXT_FONT_WEIGHT = 'bold';
 const HEADER_TEXT_COLOR = '#FFFFFF';
+const HEADER_BORDER_COLOR = '#999999';
 const HEADER_TEXT_H_ALIGNMENT = 'center';
 const HEADER_TEXT_V_ALIGNMENT = 'middle';
 
@@ -55,8 +57,27 @@ const BODY_POKEBALL_RANGE = 'D2:D';
 const BODY_CAUGHT_RANGE = 'E2:E';
 const BODY_TEXT_H_ALIGNMENT = 'center';
 const BODY_TEXT_V_ALIGNMENT = 'middle';
+const BODY_SPRITE_V_ALIGNMENT = 'bottom';
 const BODY_BACKGROUND_WHITE = '#FFFFFF';
 const BODY_BACKGROUND_GRAY = '#F2F2F2';
+
+const EVENT_BODY_RANGE = 'A2:X';
+const EVENT_SPRITE_RANGE = 'F2:F';
+const EVENT_TEXT_FONT_WEIGHT = 'bold';
+const EVENT_POKEMON1_COLS = [1, 9];
+const EVENT_TRAINER_COLS = [10, 2];
+const EVENT_POKEMON2_COLS = [12, 3];
+const EVENT_LANGUAGE_COLS = [15, 1];
+const EVENT_MOVESET_COLS = [16, 4];
+const EVENT_RIBBONS_COLS = [20, 4];
+const EVENT_NOTES_COLS = [24, 1];
+const EVENT_POKEMON1_COLORS = ['#ead1dc', '#d5a6bd'];
+const EVENT_TRAINER_COLORS = ['#d9d2e9', '#b4a7d6']
+const EVENT_POKEMON2_COLORS = ['#fff2cc', '#ffe599'];
+const EVENT_LANGUAGE_COLORS = ['#d9ead3', '#b6d7a8'];
+const EVENT_MOVESET_COLORS = ['#c9daf8', '#a4c2f4'];
+const EVENT_RIBBONS_COLORS = ['#f4cccc', '#ea9999'];
+const EVENT_NOTES_COLORS = ['#d0e0e3', '#a2c4c9'];
 
 const BEASTBALL = () => {return 'https://serebii.net/itemdex/sprites/beastball.png'};
 const CHERISHBALL = () => {return 'https://serebii.net/itemdex/sprites/cherishball.png'};

@@ -110,3 +110,14 @@ function setGalarDex() {
   sheet.getRange(BODY_POKEBALL_RANGE).setFormulas(savePokeballCol);
   sheet.getRange(BODY_CAUGHT_RANGE).setValues(saveCaughtCol);   
 }
+
+function setEventsHeader() {
+  var sheet = getSheet(EVENT_SHEET);
+  sheet.clear();
+  setEventHeader(sheet); 
+}
+
+function formatEventsSheet() {
+  var sheet = getSheet(EVENT_SHEET);
+  setEventFormat(); 
+}

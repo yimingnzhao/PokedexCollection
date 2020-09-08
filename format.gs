@@ -53,6 +53,7 @@ function setEventHeader(sheet) {
   headerRange.setFontWeight(HEADER_TEXT_FONT_WEIGHT);
   headerRange.setHorizontalAlignment(HEADER_TEXT_H_ALIGNMENT);
   headerRange.setVerticalAlignment(HEADER_TEXT_V_ALIGNMENT);
+  headerRange.setBorder(false, false, false, false, true, false, HEADER_BORDER_COLOR, SpreadsheetApp.BorderStyle.SOLID);
   
   // Removes unused columns and freezes header row
   removeUnusedColumns(sheet);
@@ -104,4 +105,51 @@ function setBodyFormat(sheet) {
   sheet.getRange(BODY_POKEBALL_RANGE).setHorizontalAlignment(BODY_TEXT_H_ALIGNMENT);
   sheet.getRange(BODY_CAUGHT_RANGE).setVerticalAlignment(BODY_TEXT_V_ALIGNMENT);
   sheet.getRange(BODY_CAUGHT_RANGE).insertCheckboxes();
+}
+
+
+/**
+ * Sets the format of the event sheet
+ * @param {Sheet} sheet The sheet to set the event format of
+ */
+function setEventFormat(sheet) {
+  var currentRow = BODY_FIRST_ROW;
+  var lastRow = sheet.getLastRow();
+  
+  // Sets alternating row colors
+  while (currentRow <= lastRow) {
+    // Gets the range objects
+    var pokemon1Range = sheet.getRange(currentRow, EVENT_POKEMON1_COLS[0], 1, EVENT_POKEMON1_COLS[1]);
+    var trainerRange = sheet.getRange(currentRow, EVENT_TRAINER_COLS[0], 1, EVENT_TRAINER_COLS[1]);
+    var pokemon2Range = sheet.getRange(currentRow, EVENT_POKEMON2_COLS[0], 1, EVENT_POKEMON2_COLS[1]);
+    var languageRange = sheet.getRange(currentRow, EVENT_LANGUAGE_COLS[0], 1, EVENT_LANGUAGE_COLS[1]);
+    var movesetRange = sheet.getRange(currentRow, EVENT_MOVESET_COLS[0], 1, EVENT_MOVESET_COLS[1]);
+    var ribbonsRange = sheet.getRange(currentRow, EVENT_RIBBONS_COLS[0], 1, EVENT_RIBBONS_COLS[1]);
+    var notesRange = sheet.getRange(currentRow, EVENT_NOTES_COLS[0], 1, EVENT_NOTES_COLS[1]);
+    // Gets the column colors
+    var pokemon1Color = (currentRow % 2 == 0) ? EVENT_POKEMON1_COLORS[0] : EVENT_POKEMON1_COLORS[1];
+    var trainerColor = (currentRow % 2 == 0) ? EVENT_TRAINER_COLORS[0] : EVENT_TRAINER_COLORS[1];
+    var pokemon2Color = (currentRow % 2 == 0) ? EVENT_POKEMON2_COLORS[0] : EVENT_POKEMON2_COLORS[1];
+    var languageColor = (currentRow % 2 == 0) ? EVENT_LANGUAGE_COLORS[0] : EVENT_LANGUAGE_COLORS[1];
+    var movesetColor = (currentRow % 2 == 0) ? EVENT_MOVESET_COLORS[0] : EVENT_MOVESET_COLORS[1];
+    var ribbonsColor = (currentRow % 2 == 0) ? EVENT_RIBBONS_COLORS[0] : EVENT_RIBBONS_COLORS[1];
+    var notesColor = (currentRow % 2 == 0) ? EVENT_NOTES_COLORS[0] : EVENT_NOTES_COLORS[1];
+    // Sets the column colors to the range objects
+    pokemon1Range.setBackground(pokemon1Color);
+    trainerRange.setBackground(trainerColor);
+    pokemon2Range.setBackground(pokemon2Color);
+    languageRange.setBackground(languageColor);
+    movesetRange.setBackground(movesetColor);
+    ribbonsRange.setBackground(ribbonsColor);
+    notesRange.setBackground(notesColor);
+    currentRow += 1;
+  }
+  
+  // Removes unused rows, sets alignments, and add heights
+  removeUnusedRows(sheet);
+  sheet.setRowHeights(BODY_FIRST_ROW, lastRow - 1, BODY_HEIGHT);
+  sheet.getRange(EVENT_BODY_RANGE).setVerticalAlignment(BODY_TEXT_V_ALIGNMENT);
+  sheet.getRange(EVENT_BODY_RANGE).setHorizontalAlignment(BODY_TEXT_H_ALIGNMENT);
+  sheet.getRange(EVENT_BODY_RANGE).setFontWeight(EVENT_TEXT_FONT_WEIGHT);
+  sheet.getRange(EVENT_SPRITE_RANGE).setVerticalAlignment(BODY_SPRITE_V_ALIGNMENT);
 }
