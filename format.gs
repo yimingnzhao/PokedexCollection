@@ -1,8 +1,8 @@
 /**
- * Sets the header of a Pokedex sheet
+ * Sets the header of the National Pokedex sheet
  * @param {Sheet} sheet - The sheet to set the header of
  */
-function setHeader(sheet) {
+function setPokedexHeader(sheet) {
   if (sheet == null) {
     throw EXCEPTION_SHEET_NOT_FOUND;
   }
