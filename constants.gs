@@ -1,5 +1,13 @@
 const DATA_SHEET = 'Data';
 const NATIONAL_POKEDEX_SHEET = 'National Dex';
+const KANTO_REGION_DEX = 'Kanto';
+const JHOTO_REGION_DEX = 'Jhoto';
+const HOENN_REGION_DEX = 'Hoenn';
+const SINNOH_REGION_DEX = 'Sinnoh';
+const UNOVA_REGION_DEX = 'Unova';
+const KALOS_REGION_DEX = 'Kalos';
+const ALOLA_REGION_DEX = 'Alola';
+const GALAR_REGION_DEX = 'Galar';
 
 const POKEDEX_REGION_NUMBERS = {
   'National' : [1, 893],
@@ -18,12 +26,18 @@ const POKEMON_JSON_URL = 'https://raw.githubusercontent.com/msikma/pokesprite/ma
 const EXCEPTION_SHEET_NOT_FOUND = 'Exception: Sheet Name Not Found';
 const EXCEPTION_INVALID_NUMBER = 'Exception: Invalid Number Input';
 
-const HEADER_RANGE = 'A1:E1';
+const HEADER_POKEDEX_RANGE = 'A1:E1';
+const HEADER_EVENT_RANGE = 'A1:X1';
 const HEADER_ROW = 1;
 const HEADER_NUM_ROWS = 1;
 const HEADER_HEIGHT = 60;
-const HEADER_WIDTHS = [50, 60, 140, 40, 60];
-const HEADER_DESCRIPTIONS = ['Dex No.', 'Sprite', 'Pokemon', 'Ball', 'Caught'];
+const HEADER_POKEDEX_WIDTHS = [50, 60, 140, 40, 60];
+const HEADER_POKEDEX_DESCRIPTIONS = ['Dex No.', 'Sprite', 'Pokemon', 'Ball', 'Caught'];
+const HEADER_EVENT_WIDTHS = [40, 30, 20, 20, 30, 60, 140, 140, 30, 100, 80, 100, 100, 70, 30, 100, 100, 100, 100, 80, 80, 80, 80, 300];
+const HEADER_EVENT_DESCRIPTIONS = ['Ball', 'FT', '★', '', 'No.', 'Sprite', 'Pokemon', 'Name', 
+                                   'Lv.', 'OT', 'ID', 'Ability', 'Nature', 'Language','M/F', 
+                                   'Move 1', 'Move 2', 'Move 3', 'Move 4', 'Ribbon 1',
+                                   'Ribbon 2', 'Ribbon 3', 'Ribbon 4', 'Notes']; 
 const HEADER_BACKGROUND = '#000000';
 const HEADER_TEXT_FONT_FAMILY = 'Arial';
 const HEADER_TEXT_FONT_SIZE  = 11;

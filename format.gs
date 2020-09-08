@@ -9,13 +9,44 @@ function setPokedexHeader(sheet) {
   
   // Styles the dimensions of the header and adds header text
   sheet.setRowHeight(HEADER_ROW, HEADER_HEIGHT);
-  for (var i = 0; i < HEADER_WIDTHS.length; i++) {
-    sheet.setColumnWidth(i + 1, HEADER_WIDTHS[i]);
-    sheet.getRange(HEADER_ROW, i + 1).setValue(HEADER_DESCRIPTIONS[i]);
+  for (var i = 0; i < HEADER_POKEDEX_WIDTHS.length; i++) {
+    sheet.setColumnWidth(i + 1, HEADER_POKEDEX_WIDTHS[i]);
+    sheet.getRange(HEADER_ROW, i + 1).setValue(HEADER_POKEDEX_DESCRIPTIONS[i]);
   }
   
   // Styles the header text font and positions
-  var headerRange = sheet.getRange(HEADER_RANGE);
+  var headerRange = sheet.getRange(HEADER_POKEDEX_RANGE);
+  headerRange.setBackground(HEADER_BACKGROUND);
+  headerRange.setFontFamily(HEADER_TEXT_FONT_FAMILY);
+  headerRange.setFontColor(HEADER_TEXT_COLOR);
+  headerRange.setFontWeight(HEADER_TEXT_FONT_WEIGHT);
+  headerRange.setHorizontalAlignment(HEADER_TEXT_H_ALIGNMENT);
+  headerRange.setVerticalAlignment(HEADER_TEXT_V_ALIGNMENT);
+  
+  // Removes unused columns and freezes header row
+  removeUnusedColumns(sheet);
+  sheet.setFrozenRows(HEADER_NUM_ROWS);
+}
+
+
+/**
+ * Sets the header for the Events sheet
+ * @param {Sheet} sheet - The sheet to set the header of
+ */
+function setEventHeader(sheet) {
+  if (sheet == null) {
+    throw EXCEPTION_SHEET_NOT_FOUND;
+  }
+
+  // Styles the dimensions of the header and adds header text
+  sheet.setRowHeight(HEADER_ROW, HEADER_HEIGHT);
+  for (var i = 0; i < HEADER_EVENT_WIDTHS.length; i++) {
+    sheet.setColumnWidth(i + 1, HEADER_EVENT_WIDTHS[i]);
+    sheet.getRange(HEADER_ROW, i + 1).setValue(HEADER_EVENT_DESCRIPTIONS[i]);
+  }
+  
+  // Styles the header text font and positions
+  var headerRange = sheet.getRange(HEADER_EVENT_RANGE);
   headerRange.setBackground(HEADER_BACKGROUND);
   headerRange.setFontFamily(HEADER_TEXT_FONT_FAMILY);
   headerRange.setFontColor(HEADER_TEXT_COLOR);
