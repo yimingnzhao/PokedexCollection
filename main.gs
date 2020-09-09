@@ -119,5 +119,12 @@ function setEventsHeader() {
 
 function formatEventsSheet() {
   var sheet = getSheet(EVENT_SHEET);
-  setEventFormat(); 
+  removeBandings(sheet.getRange(EVENT_BODY_RANGE))
+  setEventFormat(sheet); 
+}
+
+function formatCacheSheet() {
+  var sheet = getSheet(CACHE_SHEET);
+  var allCells = sheet.getRange(ALL_CELLS_RANGE);
+  setPlainTextCells(allCells);
 }
