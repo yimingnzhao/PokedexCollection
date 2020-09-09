@@ -70,3 +70,32 @@ function loadPokemonNames() {
     sheet.appendRow(data);
   }
 }
+
+
+/**
+ * Gets the sprite url for a specific Pokemon
+ * @param {String} urlEnd The end of the url for the sprite
+ */
+function displayPokemonSprite(urlEnd) {
+  return MSIKMA_SPRITE_URL + urlEnd;
+}
+
+
+/**
+ * Sets the cells in a range to the plaintext format
+ * @param {Range} range The range of cells to set to plaintext
+ */
+function setPlainTextCells(range) {
+  range.setNumberFormat(PLAINTEXT_CELL_FORMAT);
+}
+
+
+/**
+ * Removes all bandings on the current range
+ * @param {Range} range The range to remove the bandings of
+ */
+function removeBandings(range) {
+  range.getBandings().forEach(function (banding) {
+    banding.remove();
+  });
+}
