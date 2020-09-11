@@ -122,9 +122,10 @@ function setEventFormat(sheet) {
     banding.setSecondRowColor(EVENT_RANGES[key][1]);
   }
   
-  // Sets necessary ranges to plaintext
-  var trainerInfoRange = sheet.getRange(EVENT_TRAINER_RANGE);
-  setPlainTextCells(trainerInfoRange);
+  // Sets necessary ranges to plaintext and automatic
+  setPlainTextCells(sheet.getRange(EVENT_TRAINER_RANGE));
+  setAutomaticCells(sheet.getRange(EVENT_DEX_NO_RANGE));
+  setAutomaticCells(sheet.getRange(EVENT_YEAR_RANGE));
   
   // Removes unused rows, sets alignments, and add heights
   removeUnusedRows(sheet);
@@ -132,5 +133,11 @@ function setEventFormat(sheet) {
   sheet.getRange(EVENT_BODY_RANGE).setVerticalAlignment(BODY_TEXT_V_ALIGNMENT);
   sheet.getRange(EVENT_BODY_RANGE).setHorizontalAlignment(BODY_TEXT_H_ALIGNMENT);
   sheet.getRange(EVENT_BODY_RANGE).setFontWeight(EVENT_TEXT_FONT_WEIGHT);
+  sheet.getRange(EVENT_BODY_RANGE).setFontFamily(EVENT_TEXT_FONT_FAMILY);
   sheet.getRange(EVENT_SPRITE_RANGE).setVerticalAlignment(BODY_SPRITE_V_ALIGNMENT);
+  
+  // Sorts the rows
+  for (var i = EVENT_SORT_COLUMNS.length - 1; i >= 0; i--) {
+    sheet.sort(EVENT_SORT_COLUMNS[i]);
+  }
 }

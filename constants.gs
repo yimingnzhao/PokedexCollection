@@ -24,6 +24,7 @@ const POKEDEX_REGION_NUMBERS = {
 };
 
 const PLAINTEXT_CELL_FORMAT = '@STRING@';
+const AUTOMATIC_CELL_FORMAT = 'General';
 const ALL_CELLS_RANGE = 'A1:Z';
 
 const POKEMON_JSON_URL = 'https://raw.githubusercontent.com/msikma/pokesprite/master/data/pokemon.json';
@@ -33,17 +34,18 @@ const EXCEPTION_SHEET_NOT_FOUND = 'Exception: Sheet Name Not Found';
 const EXCEPTION_INVALID_NUMBER = 'Exception: Invalid Number Input';
 
 const HEADER_POKEDEX_RANGE = 'A1:E1';
-const HEADER_EVENT_RANGE = 'A1:X1';
+const HEADER_EVENT_RANGE = 'A1:W1';
 const HEADER_ROW = 1;
 const HEADER_NUM_ROWS = 1;
 const HEADER_HEIGHT = 60;
 const HEADER_POKEDEX_WIDTHS = [50, 60, 140, 40, 60];
 const HEADER_POKEDEX_DESCRIPTIONS = ['Dex No.', 'Sprite', 'Pokemon', 'Ball', 'Caught'];
-const HEADER_EVENT_WIDTHS = [40, 30, 20, 20, 30, 60, 140, 140, 30, 120, 100, 120, 120, 30, 100, 120, 120, 120, 120, 70, 70, 70, 70, 350];
-const HEADER_EVENT_DESCRIPTIONS = ['Ball', 'FT', '★', '', 'No.', 'Sprite', 'Pokemon', 'Name', 
-                                   'Lv.', 'OT', 'ID', 'Ability', 'Nature','M/F', 'Language', 
-                                   'Move 1', 'Move 2', 'Move 3', 'Move 4', 'Ribbon 1',
-                                   'Ribbon 2', 'Ribbon 3', 'Ribbon 4', 'Notes']; 
+const HEADER_EVENT_WIDTHS = [40, 30, 20, 20, 30, 60, 150, 140, 30, 120, 100, 120, 120, 30, 100, 120, 120, 120, 120, 70, 350, 40, 200];
+const HEADER_EVENT_DESCRIPTIONS = ['Ball', 'FT', '★', '', 'No.', 'Sprite', 
+                                   'Pokemon', 'Name', 'Lv.', 'OT', 'ID', 
+                                   'Ability', 'Nature','M/F', 'Language', 
+                                   'Move 1', 'Move 2', 'Move 3', 'Move 4', 
+                                   'Ribbon', 'Event', 'Year', 'Notes']; 
 const HEADER_BACKGROUND = '#000000';
 const HEADER_TEXT_FONT_FAMILY = 'Arial';
 const HEADER_TEXT_FONT_SIZE  = 11;
@@ -66,24 +68,27 @@ const BODY_SPRITE_V_ALIGNMENT = 'bottom';
 const BODY_BACKGROUND_WHITE = '#FFFFFF';
 const BODY_BACKGROUND_GRAY = '#F2F2F2';
 
-const EVENT_BODY_RANGE = 'A2:X';
+const EVENT_BODY_RANGE = 'A2:W';
 const EVENT_POKEMON1_RANGE = 'A2:I';
+const EVENT_DEX_NO_RANGE = 'E2:E';
 const EVENT_SPRITE_RANGE = 'F2:F';
+const EVENT_YEAR_RANGE = 'V2:V';
 const EVENT_TRAINER_RANGE = 'J2:K';
 const EVENT_POKEMON2_RANGE = 'L2:N';
 const EVENT_LANGUAGE_RANGE = 'O2:O';
 const EVENT_MOVESET_RANGE = 'P2:S';
-const EVENT_RIBBONS_RANGE = 'T2:W';
-const EVENT_NOTES_RANGE = 'X2:X';
+const EVENT_RIBBONS_RANGE = 'T2:T';
+const EVENT_NOTES_RANGE = 'U2:W';
 const EVENT_TEXT_FONT_WEIGHT = 'bold';
+const EVENT_TEXT_FONT_FAMILY = 'Arial';
 const EVENT_BODY_HEIGHT = 50;
 const EVENT_POKEMON1_COLORS = ['#ead1dc', '#d5a6bd'];
 const EVENT_TRAINER_COLORS = ['#d9d2e9', '#b4a7d6']
 const EVENT_POKEMON2_COLORS = ['#fff2cc', '#ffe599'];
 const EVENT_LANGUAGE_COLORS = ['#d9ead3', '#b6d7a8'];
 const EVENT_MOVESET_COLORS = ['#c9daf8', '#a4c2f4'];
-const EVENT_RIBBONS_COLORS = ['#f4cccc', '#ea9999'];
-const EVENT_NOTES_COLORS = ['#d0e0e3', '#a2c4c9'];
+const EVENT_RIBBONS_COLORS = ['#d0e0e3', '#a2c4c9'];
+const EVENT_NOTES_COLORS = ['#f4cccc', '#ea9999'];
 
 const EVENT_RANGES = {
   [EVENT_POKEMON1_RANGE] : EVENT_POKEMON1_COLORS,
@@ -94,6 +99,8 @@ const EVENT_RANGES = {
   [EVENT_RIBBONS_RANGE]  : EVENT_RIBBONS_COLORS,
   [EVENT_NOTES_RANGE]    : EVENT_NOTES_COLORS,
 }
+
+const EVENT_SORT_COLUMNS = [5, 22];
 
 const BEASTBALL = () => {return 'https://serebii.net/itemdex/sprites/beastball.png'};
 const CHERISHBALL = () => {return 'https://serebii.net/itemdex/sprites/cherishball.png'};

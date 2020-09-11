@@ -91,6 +91,14 @@ function setPlainTextCells(range) {
 
 
 /**
+ * Sets the cells in a range to the automatic format
+ */
+function setAutomaticCells(range) {
+  range.setNumberFormat(AUTOMATIC_CELL_FORMAT);
+}
+
+
+/**
  * Removes all bandings on the current range
  * @param {Range} range The range to remove the bandings of
  */
